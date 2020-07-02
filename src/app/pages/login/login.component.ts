@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
+import { Formulario, Usuario } from '../../interfaces/interfaces';
 
 @Component({
   selector: 'app-login',
@@ -9,23 +9,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
-  public login = {
+  public error: boolean;
+  public formulario: Formulario = {
     password: "Nolodire20",
     type: "normal",
     username: "phbhelloworld@gmail.com"
   };
 
-  constructor(private loginService: LoginService,
+  constructor(public loginService: LoginService,
     private router: Router) { }
 
-  submitLogin(formLogin: NgForm) {
-    if (formLogin.valid) {
-      this.loginService.login(this.login)
-        .subscribe(() => this.router.navigate(['/pendiente'])
-          , err => console.log(err.error._error_message))
-    } else {
-      console.log('No es valido');
-    }
+  submitLogin() {
+    this.loginService.login(this.formulario)
+      .subscribe((resp: Usuario) => {
+        this.error = false;
+        localStorage.setItem('usuario', JSON.stringify(resp));
+        this.router.navigate(['/pendiente']);
+      }, err => {
+        this.error = true;
+        localStorage.clear();
+        console.log(err.error._error_message)
+      });
   }
 }

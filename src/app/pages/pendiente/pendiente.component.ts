@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HistoriaService } from 'src/app/services/historia.service';
+import { Usuario, Historia } from '../../interfaces/interfaces';
 
 @Component({
   selector: 'app-pendiente',
@@ -8,19 +9,16 @@ import { HistoriaService } from 'src/app/services/historia.service';
 })
 export class PendienteComponent implements OnInit {
 
-  public usuario: any = JSON.parse(localStorage.getItem('usuario'));
-  public listaHistoria: any;
+  public usuario: Usuario = JSON.parse(localStorage.getItem('usuario'));
+  public listaHistoria: Historia[];
 
   constructor(private historiaService: HistoriaService) { }
 
   ngOnInit(): void {
-    console.log(this.usuario);
-
-
-    this.historiaService.obtenerHistoria(this.usuario.token)
-      .subscribe(resp => {
+    this.historiaService.obtenerHistoria(this.usuario.auth_token)
+      .subscribe((resp: Historia[]) => {
         this.listaHistoria = resp;
-      })
+      }, () => this.listaHistoria = []);
   }
 
 }

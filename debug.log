@@ -1,0 +1,13 @@
+[0702/123433.047:ERROR:process_info.cc(329)] VirtualQueryEx: Acceso denegado. (0x5)
+[0702/123433.048:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0702/123433.048:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0702/124056.643:ERROR:process_memory_win.cc(73)] ReadMemory at 0x7ff75cd00000 of 64 bytes failed: Solo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0702/124056.644:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+[0702/124056.644:ERROR:process_memory_win.cc(73)] ReadMemory at 0x7ffa663b0000 of 64 bytes failed: Solo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0702/124536.538:ERROR:process_info.cc(329)] VirtualQueryEx: Acceso denegado. (0x5)
+[0702/124536.538:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0702/124536.538:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0702/140925.986:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0702/140925.988:ERROR:file_io_win.cc(161)] CreateFile C:\Users\usuario\AppData\Local\Temp\karma-85114668\Crashpad\settings.dat: El sistema no puede encontrar la ruta especificada. (0x3)
+[0702/140925.989:ERROR:file_io_win.cc(170)] CreateFile C:\Users\usuario\AppData\Local\Temp\karma-85114668\Crashpad\reports\624638cd-c555-400b-ad4c-8bf92de445ac.dmp: El sistema no puede encontrar la ruta especificada. (0x3)
+[0702/140925.989:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed

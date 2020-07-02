@@ -3,19 +3,9 @@
 <div class="div_usuario">
   <div class="div_data_usuario">
     <div>
-      <img [src]="usuario.avatar" alt="" />
+      <img [src]="usuario.photo" />
     </div>
     <div>{{ usuario.username }}</div>
   </div>
 </div>
-
-<div class="card-historia" *ngFor="let historia of listaHistoria">
-  <h2>{{ historia.subject }}</h2>
-  <div class="div_avatar">
-    <img [src]="historia.assigned_to_extra_info.photo" alt="" />
-    <span>{{ historia.assigned_to_extra_info.username }}</span>
-  </div>
-  <div>
-    <span class="name">{{ historia.status_extra_info.name }}</span>
-  </div>
-</div>
+<app-subject [historias]="listaHistoria"></app-subject>

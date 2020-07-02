@@ -1,0 +1,38 @@
+h1 {
+  margin-left: 20%;
+}
+.div_usuario {
+  padding-left: 93%;
+}
+
+.div_data_usuario {
+  position: absolute;
+  width: 80px;
+  text-align: center;
+}
+
+.card-historia {
+  margin: 20px;
+  padding: 10px;
+  border: solid 3px black;
+  width: 50%;
+  height: 130px;
+}
+
+.div_avatar {
+  position: absolute;
+  text-align: center;
+  margin-left: 43%;
+  margin-top: -30px;
+  font-weight: bold;
+  font-size: 15px;
+  width: 80px;
+  height: 100px;
+}
+
+.name {
+  margin-top: 50px;
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+}

@@ -1,0 +1,44 @@
+<h1 class="titulo_center">Bienvenido a tu test!</h1>
+
+<form
+  class="formulario"
+  (ngSubmit)="submitLogin(formLogin)"
+  #formLogin="ngForm"
+  novalidate=""
+>
+  <div>
+    <label class="label">Usuario</label>
+    <div>
+      <input
+        class="input_login"
+        #nombre="ngModel"
+        type="text"
+        name="nombre"
+        [(ngModel)]="login.username"
+        required
+      />
+    </div>
+    <label class="label">Contraseña</label>
+    <div>
+      <input
+        class="input_login"
+        #apellido="ngModel"
+        required
+        name="apellido"
+        [(ngModel)]="login.password"
+        type="text"
+      />
+    </div>
+  </div>
+
+  <div>
+    <div class="div_boton">
+      <button class="boton_login" type="reset">
+        Cancelar
+      </button>
+      <button class="boton_login" type="submit">
+        Login
+      </button>
+    </div>
+  </div>
+</form>
